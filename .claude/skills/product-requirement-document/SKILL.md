@@ -29,15 +29,15 @@ Documenting existing product requirements.
 ### Step 1: Define the problem
 
 1. What are you building?
-  Provide user a hint: Give me a 1-2 sentence pitch describing what the product, and what problem it solves.
+   Provide user a hint: Give me a 1-2 sentence pitch describing what the product, and what problem it solves.
 
 2. Who it is for?
-  Provide user a hint: Tell me about your target audience — who they are, their pain points, and when/where they'd use the product
+   Provide user a hint: Tell me about your target audience — who they are, their pain points, and when/where they'd use the product
 
 3. How do we measure success?
-  Quantifiable outcomes.
+   Quantifiable outcomes.
 
-### Capabilities and functional decomposition
+### Step 2: Capabilities and functional decomposition
 
 Think about what the product does, not code structure, but [[#Step 1: Define the problem]]
 
@@ -45,11 +45,11 @@ Think about what the product does, not code structure, but [[#Step 1: Define the
    e.g., "Data Management", "Authentication", "Commerce", "Finance", "Marketing"
 
 2. What is the main user flow?
-  Provide user a hint: Map out the step-by-step experience.
-  For example: Open app → Login → Find topic → Vote/Comment → submit.
+   Provide user a hint: Map out the step-by-step experience.
+   For example: Open app → Login → Find topic → Vote/Comment → submit.
 
 3. What are the must have capabilities (for first version)?
-  Which are must have, and which good to have.
+   Which are must have, and which good to have.
 
 4. For each capability, define:
 
@@ -58,7 +58,15 @@ Think about what the product does, not code structure, but [[#Step 1: Define the
 - Outputs (what it produces)
 - Behavior (key logic)
 
+## Step 3: Explore
+
+Apply critical thinking skill `../critical-thinking`
+
 ## Output
+
+Determine in which `./domains` folder this product should fit, and create product folder in that domain.
+But don't create domain folder if it doesn't exist.
+If no fit, put this product in `work` folder, and create folder for this product.
 
 Generate markdown document combining all given inputs in appropriate structure.
 

@@ -1,0 +1,30 @@
+{
+  "$schema": "file://./../.schema/technology.schema.json",
+  "id": "shortUUID",
+  "name": "",
+  "aliases": [""],
+  "tags": [],
+  "description": "",
+  "status": {
+    "value": "",
+    "scope": {
+      "value": "",
+      "comment": ""
+    },
+    "conditions": []
+  },
+  "direction": {
+    "value": ""
+  },
+  "references": [
+  ],
+  "categories": [],
+  "license": {
+    "category": "",
+    "metric": ""
+  },
+  "vendor": {
+    "ref": "",
+    "comment": ""
+  }
+}
