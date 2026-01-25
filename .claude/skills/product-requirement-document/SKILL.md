@@ -60,13 +60,14 @@ Think about what the product does, not code structure, but [[#Step 1: Define the
 
 ## Step 3: Explore
 
-Apply critical thinking skill `../critical-thinking`
+1. Analyse answers and check if there is description on HOW to build the product?
+   If yes
+   - make summary on WHAT and WHY and validate with the user is WHAT and WHY correct, and how is different from HOW?
+   - Verify with user the difference and ask explicitly to focus on WHAT and WHY?
+   
+2. Apply critical thinking skill `../critical-thinking`
 
 ## Output
-
-Determine in which `./domains` folder this product should fit, and create product folder in that domain.
-But don't create domain folder if it doesn't exist.
-If no fit, put this product in `work` folder, and create folder for this product.
 
 Generate markdown document combining all given inputs in appropriate structure.
 
@@ -74,3 +75,6 @@ Generate markdown document combining all given inputs in appropriate structure.
 - Reasoning why we need this product and why we can't use existing products.
 - What are the main capabilities of the product with their description.
 - what are the main user flows
+
+Put this document markdown in `work/<project-name>/product/` folder.
+
