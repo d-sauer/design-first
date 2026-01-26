@@ -77,6 +77,10 @@ Think about what the product does, not code structure, but [[#Step 1: Define the
 - Generate markdown document combining all given inputs in appropriate structure.
    - Brief product description
    - Reasoning why we need this product and why we can't use existing products.
+   - Create a Mermaid mindmap diagram that provides a crisp, scannable overview of the product.
+      - Format: Mermaid mindmap syntax
+      - Depth: Maximum 2 levels (root → modules → capabilities)
+      - Focus: WHAT the product does (not WHY it exists or HOW it works)
    - What are the main capabilities of the product with their description.
    - what are the main user flows
    - Put this document markdown in `work/<project-name>/product/product-requirement.md`.

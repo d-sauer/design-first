@@ -13,6 +13,41 @@
 
 The Tech Registry Portal is a web-based technology governance platform that enables IT organizations across multiple entities to discover, understand, and collaborate on technology standards. The portal provides a centralized, transparent view of approved (greenbook), prohibited (blackbook), and lifecycle-managed technologies, while empowering the community to propose changes and learn from shared technology decisions.
 
+
+```mermaid
+mindmap
+  root((Tech Registry Portal))
+    Technology Catalog
+      Search and browse technologies
+      View technology details
+      Filter by status and category
+      Technology classifications
+    Lifecycle Management
+      Track technology stages
+      Revalidation workflows
+      Expiration monitoring
+      Transition periods
+    Proposal System
+      Submit new technologies
+      Request changes
+      Review workflow
+      Version history
+    Governance Tools
+      Approval workflows
+      Bulk operations
+      Exception management
+      Audit trail
+    Analytics
+      Usage tracking
+      Adoption metrics
+      Engagement reports
+      Dashboard
+    User Access
+      General users browse propose
+      Administrators review manage
+      Directors approve exceptions
+```
+
 ---
 
 ## Problem Statement
