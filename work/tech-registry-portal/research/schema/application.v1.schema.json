@@ -1,0 +1,149 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "application.v1.schema.json",
+  "title": "Application record schema",
+  "description": "Representing application record in the repository, but not instance",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier of the applicationb",
+      "pattern": "^[0-9a-fA-F]{8}$"
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of the application"
+    },
+    "aliases": {
+      "type": "array",
+      "description": "Aliases for this application",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": {
+      "type": "string"
+    },
+    "businessCapabilities": {
+      "type": "array",
+      "description": "List of main capabilities of the application",
+      "items": {
+        "type": "string"
+      }
+    },
+    "references": {
+      "type": "array",
+      "description": "List of references with URLs and comments",
+      "items": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "The URL of the reference"
+          },
+          "identifier": {
+            "type": "string",
+            "description": "Identifier of the reference"
+          },
+          "comment": {
+            "type": "string",
+            "description": "Comment about the reference"
+          }
+        },
+        "required": [
+          "url",
+          "identifier"
+        ]
+      }
+    },
+    "applicationType": {
+      "type": "string",
+      "enum": ["SaaS", "COTS", "Custom", "Legacy"]
+    },
+    "links": {
+      "type": "array",
+      "description": "List of links related for the application",
+      "items": {
+        "$ref": "#/$defs/linkItem"
+      }
+    }
+  },
+  "required": [
+    "name"
+  ],
+  "$defs": {
+    "linkItem": {
+      "type": "object",
+      "properties": {
+        "link": {
+          "type": "string",
+          "description": "Direction of the link",
+          "anyOf": [
+            {
+              "const": "ProvidedBy",
+              "description": "ProvidedBy specify who is offering the linked resource"
+            },
+            {
+              "const": "DevelopedBy",
+              "description": "specify who made this technology"
+            },
+            {
+              "const": "UsedBy",
+              "description": "Specify who is using the linked resource"
+            },
+            {
+              "const": "ReplacedBy",
+              "description": "Specify with what this resource is replaced by"
+            },
+            {
+              "const": "Using",
+              "description": "Specify what is used by the linked resource"
+            }
+          ]
+        },
+        "target": {
+          "type": "string",
+          "description": "Target record of the link",
+          "format": "uri-reference",
+          "isReference": true
+        },
+        "comment": {
+          "type": "string",
+          "description": "Comment about the link"
+        },
+        "tags": {
+          "type": "array",
+          "description": "List of tags associated with the link",
+          "items": {
+            "type": "object",
+            "properties": {
+              "tag": {
+                "type": "string",
+                "description": "Type of the tag"
+              },
+              "value": {
+                "type": "string",
+                "description": "Value relevant to the tag"
+              },
+              "comment": {
+                "type": "string",
+                "description": "Comment about the tag"
+              }
+            },
+            "required": [
+              "tag"
+            ]
+          }
+        },
+        "t2": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "link",
+        "target"
+      ]
+    }
+  }
+}

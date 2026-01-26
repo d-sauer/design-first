@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "organisation.v1.schema.json",
+  "title": "Organisation schema",
+  "description": "Schema used to define organisational units such as teams, departments, or domains within the organization structure",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier of the group",
+      "pattern": "^[0-9a-fA-F]{8}$"
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of the group"
+    },
+    "aliases": {
+      "type": "array",
+      "description": "List of different aliases for this group",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": {
+      "type": "string",
+      "description": "Brief description of this organisational entity"
+    },
+    "type": {
+      "type": "string",
+      "oneOf": [
+        {
+          "const": "domain",
+          "description": "Type representing organisational domain"
+        },
+        {
+          "const": "department",
+          "description": "Type representing organisational department"
+        },
+        {
+          "const": "team",
+          "description": "Type representing a team withing the organisation"
+        },
+        {
+          "const": "entity",
+          "description": "Type representing a global organisational entity"
+        }
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "name"
+  ],
+  "$defs": {
+  }
+}

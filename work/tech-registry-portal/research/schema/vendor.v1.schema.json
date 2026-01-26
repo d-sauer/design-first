@@ -1,0 +1,92 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "vendor.v1.schema.json",
+    "title": "Vendor record schema",
+    "description": "Representing vendor information.",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "Name of the vendor"
+        },
+        "aliases": {
+            "type": "array",
+            "description": "List of different aliases for the vendor",
+            "items": {
+                "type": "string"
+            }
+        },
+        "references": {
+            "type": "array",
+            "description": "List of references with URLs and comments",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "url": {
+                        "type": "string",
+                        "format": "uri",
+                        "description": "The URL of the reference"
+                    },
+                    "identifier": {
+                        "type": "string",
+                        "description": "Identifier of the reference"
+                    },
+                    "comment": {
+                        "type": "string",
+                        "description": "Comment about the reference"
+                    }
+                },
+                "required": [
+                    "url"
+                ]
+            }
+        },
+        "description": {
+            "type": "string",
+            "description": "Description of the vendor"
+        },
+        "support": {
+            "type": "string",
+            "description": "Support details provided by the vendor"
+        },
+        "contact": {
+            "type": "string",
+            "description": "Contact details of the vendor"
+        },
+        "tags": {
+            "type": "array",
+            "description": "List of tags associated with the technology",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "tag": {
+                        "description": "Type of the tag",
+                        "$ref": "#/$defs/tag-const"
+                    },
+                    "value": {
+                        "type": "string",
+                        "description": "Value relevant to the tag"
+                    },
+                    "comment": {
+                        "type": "string",
+                        "description": "Comment about the tag"
+                    }
+                },
+                "required": ["tag"]
+            }
+        }
+    },
+    "required": [
+        "name"
+    ],
+    "$defs": {
+        "tag-const": {
+            "anyOf": [
+                {
+                    "type": "string",
+                    "pattern": "^[a-z0-9_-]+$"
+                }
+            ]
+        }
+    }
+}
