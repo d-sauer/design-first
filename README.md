@@ -37,18 +37,21 @@ Skills are AI-powered workflows that guide you through specific processes. Invok
 ### Work Item Management
 
 **`/work-item`** - Create new work item
+
 - Sets up folder structure for research, product, architecture
 - Establishes organized workspace for the entire lifecycle
 
 ### Product Definition
 
 **`/product-requirement-document`** - Define product requirements
+
 - Captures WHAT and WHY (not HOW)
 - Defines capabilities, user flows, and success metrics
 - Uses RPG (Repository Planning Graph) methodology
 - Outputs: Product Requirements Document (PRD)
 
 **`/critical-thinking`** - Apply critical analysis
+
 - Questions assumptions and explores alternatives
 - Identifies blind spots and latent topics
 - Broadens understanding through structured inquiry
@@ -56,45 +59,52 @@ Skills are AI-powered workflows that guide you through specific processes. Invok
 ### Architecture & Design
 
 **`/system-context`** - Document system context (C4 Level 1)
+
 - Maps actors, external systems, and interactions
 - Defines system boundaries
 - Creates big-picture view for all stakeholders
 
 **`/system-container`** - Document containers (C4 Level 2)
+
 - Decomposes system into applications, services, data stores
 - Documents technology choices and communication patterns
 - Shows runtime architecture
 
 **`/system-container-component`** - Document components (C4 Level 3)
+
 - Breaks down containers into functional components
 - Documents interfaces and responsibilities
 - Shows detailed structural design
 
 **`/system-deployment`** - Document deployment (C4 Deployment)
+
 - Maps containers to infrastructure
 - Documents environments (dev/staging/prod)
 - Captures scaling and redundancy patterns
 
 **`/system-landscape`** - Document enterprise landscape (C4 Level 0)
+
 - Captures broader organizational context
 - Shows how systems relate across the enterprise
 
 **`/architecture-design`** - General architecture design
+
 - Architecture design and mapping of solutions
 - Flexible approach for various architecture tasks
 
 ### Decision & Standards Management
 
 **`/adr`** - Create Architecture Decision Record
+
 - Documents significant architectural decisions
 - Captures context, options, and rationale
 - Maintains decision history
 
 **`/technology-registration`** - Register technology
+
 - Adds technology to approved repository
 - Documents purpose, constraints, and governance
 - Maintains technology standards
-
 
 ## Workflow
 
@@ -113,6 +123,7 @@ Answer the prompts to create a structured work item folder.
 ```
 
 Work through guided questions to define:
+
 - What problem you're solving and for whom
 - Key capabilities and user flows
 - Success metrics and constraints
@@ -183,13 +194,14 @@ The `standards/` folder contains organization-wide conventions:
 3. Follow the guided workflow
 4. Reference existing work items in `work/` for examples
 
-
 ## ToDo
 
-**`/domain-driven-design`** - Apply DDD principles
-- Domain modeling and bounded contexts
-- Strategic and tactical design patterns
-
+- [ ] Apply DDD principles as SKILL
+- [ ] Domain modeling and bounded contexts, before component diagram
+- [ ] Create NFR skills to outline better non functional requirements, at he beginning of architecture design
+- [ ] Put Mermaide diagrams in separate standalone files
+- [ ] Add setup to run locall C4 Structurizr
+- [ ] Generate plan of execution / tasks
 
 ## Questions?
 

@@ -19,6 +19,9 @@ It's used during designing new architecture or mapping or updating existing arch
 
 ## Software Architecture
 
+- Confirm on which work item in `/work` folder this work is for.
+- In the current work item in `/work/{work item}` folder , analyse `research` folder for this work item, and `product/product-requirement.md` document for initial details.
+
 - System Landscape `./../system-landscape/SKILL.md`  
   To understand sorounding of your application and main components 
 
