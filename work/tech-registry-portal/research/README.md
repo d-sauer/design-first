@@ -7,6 +7,7 @@ This folder contains initial research and draft documents to help gather require
 - [Product Requirements Draft](./product-requirements-draft.md) - Initial questions and ideas about product requirements
 - [Architecture Draft](./architecture-draft.md) - Initial questions and ideas about system architecture
 - [Schema](./schema/) - contains datamodel for managing technologies and what options are allowed
+- [Technology Control framework](./technology-control-framework.md) Is the control framework used when introducing new technology.
 
 ## Next Steps
 

@@ -1,7 +1,7 @@
 # Product Requirements Document
 # Tech Registry Portal
 
-**Version:** 1.0
+**Version:** 1.1
 **Date:** 2026-01-26
 **Status:** Draft
 **Stakeholders:** Technology Director, Engineering Director
@@ -137,29 +137,43 @@ The Tech Registry Portal transforms technology governance from a top-down mandat
 
 ### 2. Technology Lifecycle Management
 
-**Description:** Track and manage the complete lifecycle of technologies from introduction through active use, deprecation, and eventual prohibition.
+**Description:** Track and manage the complete lifecycle of technologies from introduction through active use, deprecation, and eventual prohibition, with community-driven maintenance and governance oversight.
 
 **What It Does:**
 - Maintains lifecycle state for each technology (proposed, active, deprecating, deprecated, prohibited)
 - Tracks approval dates, expiration dates, and revalidation schedules
 - Alerts administrators to technologies requiring revalidation
 - Provides visibility into technologies approaching end-of-life or deprecation
+- Manages transition periods based on technology impact (low/medium/high)
 
 **Inputs:**
 - Technology record with lifecycle metadata (dates, status, owner)
 - Lifecycle stage transitions
-- Revalidation triggers (date-based, event-based)
+- **Revalidation triggers:**
+  - Time-based: scheduled expiration dates
+  - Vendor/market changes: EOL announcements, major versions, licensing changes
+  - Strategy changes: shifts in organizational direction
+  - Usage metrics: adoption patterns, incident trends, performance issues
+- Impact assessment for transition planning
 
 **Outputs:**
 - Technology catalog with visible lifecycle indicators
-- Lists of technologies requiring revalidation
+- Lists of technologies requiring revalidation (flagged with reasons)
 - Expiration alerts and reports
 - Historical lifecycle transition records
+- Transition period timelines (30/90/180+ days based on impact)
 
 **Key Behaviors:**
 - Technologies progress through defined lifecycle stages
-- Expiration dates trigger revalidation workflows
-- Technologies without timely revalidation are flagged for review
+- Multiple triggers initiate revalidation workflows (not just expiration)
+- **Community-driven maintenance:** Any user can propose updates through the proposal workflow
+- **Governance oversight:** Administrators and directors provide follow-up and accountability
+- Technologies that expire without revalidation are **flagged but retain current status** until reviewed
+- Warning indicators clearly mark expired technologies requiring action
+- **Impact-based transitions:** Classification changes include grace periods scaled to technology impact
+  - Low impact: 30 days
+  - Medium impact: 90 days
+  - High impact: 180+ days
 - Lifecycle transitions are recorded for audit and history
 - Clear visual representation of where each technology sits in its lifecycle
 
@@ -175,59 +189,83 @@ The Tech Registry Portal transforms technology governance from a top-down mandat
 - Tracks proposal status through workflow stages (draft, submitted, under review, approved, rejected)
 - Maintains version history of all changes to technology records
 - Allows commenting and feedback on proposals during review
+- Supports standard and fast-track approval paths
 
 **Inputs:**
-- Proposal form data (technology details, classification recommendation, rationale)
+- **Required Proposal Fields:**
+  - Technology name and version
+  - Description of the technology
+  - Official web page/documentation link
+  - Use case(s) being addressed
+  - Business rationale and value proposition
+  - Alternatives considered and comparison
+  - Migration plan (for changes to existing technologies)
 - Submitter information
-- Change justification and business case
+- Classification recommendation (greenbook, blackbook, lifecycle stage)
 - Reviewer comments and decisions
 
 **Outputs:**
 - Submitted proposals awaiting review
-- Proposal status updates
+- Proposal status updates (draft, submitted, under review, approved, rejected)
 - Version history showing what changed and why
 - Approved changes reflected in the catalog
+- Rejection rationale for declined proposals
 
 **Key Behaviors:**
 - Any authorized user can submit a proposal
-- Proposals enter a review workflow
+- Proposals enter standard review workflow (target: 2 weeks)
+- Fast-track option: Directors can expedite urgent proposals with justification and post-review
 - Reviewers can request clarifications or changes
+- Administrators can assign proposals to domain experts when specialized knowledge required
 - Approved proposals automatically update the technology catalog
-- Rejected proposals include rationale for the decision
+- Rejected proposals include documented rationale for the decision
 - All proposal activity is audited for governance
+- Iterative refinement supported (request changes → resubmit)
 
 ---
 
 ### 4. Governance & Approval Workflows
 
-**Description:** Provide administrators with tools to review, approve, or reject technology proposals and changes through a structured workflow.
+**Description:** Provide administrators with tools to review, approve, or reject technology proposals and changes through structured workflows with standard and fast-track paths.
 
 **What It Does:**
 - Displays pending proposals in an administrative dashboard
 - Enables detailed review of proposal information and rationale
 - Allows administrators to request changes or additional information
+- Supports assignment to subject matter experts for domain-specific reviews
 - Provides approval/rejection actions with comment capability
 - Routes approved changes to update the catalog automatically
+- Offers fast-track approval path for urgent decisions
 
 **Inputs:**
-- Submitted proposals
+- Submitted proposals (with all required fields)
 - Reviewer comments and feedback
+- SME review assignments (when specialized expertise needed)
 - Approval or rejection decisions
-- Decision rationale
+- Decision rationale and justification
+- Fast-track indicators for urgent approvals
 
 **Outputs:**
-- Updated proposal status (approved/rejected)
+- Updated proposal status (draft, submitted, under review, approved, rejected)
 - Notifications to proposal submitters
 - Updated technology catalog (for approved proposals)
-- Decision audit trail
+- Decision audit trail with approval authority recorded
+- SME assignment and review tracking
 
 **Key Behaviors:**
 - Administrative dashboard shows all pending reviews
+- **Standard Review Process:** Target 2-week cycle for complete proposals
+- **SME Involvement:** Administrators can assign reviews to domain experts when specialized knowledge required
+- **Fast-Track Path:** Technology Director or Engineering Director can expedite urgent proposals
+  - Requires documented business justification
+  - Includes post-review documentation
+  - Enables rapid response to business needs
 - Reviewers can view full proposal context and submitter rationale
 - Decisions require documented reasoning
 - Approved proposals trigger catalog updates
 - Decision history is maintained for governance compliance
 - Workflow supports iterative refinement (request changes → resubmit)
+- All approvals record the approving authority (administrator vs director)
 
 ---
 
@@ -264,35 +302,42 @@ The Tech Registry Portal transforms technology governance from a top-down mandat
 
 ### 6. Exception Management
 
-**Description:** Record and track exceptions where technologies are approved for use outside standard governance policies for specific cases.
+**Description:** Record and track exceptions where technologies are approved for use outside standard governance policies for specific cases, particularly enabling local entity needs within strict central standards.
 
 **What It Does:**
 - Creates exception records linked to technology entries
 - Captures exception justification, scope, and time limits
 - Tracks exception approver and approval date
 - Marks exceptions as active or expired
-- Provides visibility into which technologies have active exceptions
+- Provides full transparency of exceptions to all authenticated users
+- Documents restrictions and conditional usage terms
 
 **Inputs:**
 - Technology record requiring exception
 - Exception rationale and business justification
 - Exception scope (which entity, project, or team)
+- Restrictions and conditional usage terms
 - Exception expiration date
-- Approver information
+- Approver information (Technology Director or Engineering Director)
 
 **Outputs:**
-- Exception record linked to technology
+- Exception record linked to technology (visible to all users)
 - Exception status (active, expired, revoked)
+- Documented restrictions and conditions
 - Audit trail of exception decisions
-- Visibility of exceptions in technology detail views
+- Public visibility of exceptions in technology detail views
 
 **Key Behaviors:**
-- Exceptions are explicitly approved by authorized administrators
-- Each exception has a defined time limit
-- Exceptions are clearly visible when viewing technology records
-- Expired exceptions are flagged and can be renewed or closed
+- **Approval Authority:** Only Technology Director OR Engineering Director can approve exceptions
+- All exceptions require documented business justification
+- Each exception has a defined time limit and scope
+- Exceptions are **visible to all authenticated users** for transparency
+- Exception details include: rationale, scope, restrictions, conditions, expiration, and approver
+- Local entities cannot override central standards; they must request exceptions
+- Expired exceptions are flagged and can be renewed with updated justification
 - Exception usage is tracked for governance reporting
 - Exceptions don't change the base greenbook/blackbook classification
+- Exception history is maintained for audit purposes
 
 ---
 
@@ -431,6 +476,12 @@ The Tech Registry Portal transforms technology governance from a top-down mandat
 
 ### Functional Constraints
 
+**Technology Scope Definition:**
+> Technology is the building block used to construct applications, systems, services and IT assets that support business capabilities. Along with the underlying infrastructure that enables their delivery and consumption, including tools, frameworks, techniques and processes employed to develop, deploy and manage those technology solutions.
+
+- **Included:** Programming languages, frameworks, cloud platforms, infrastructure components, development tools, architectural patterns, databases, integration technologies
+- **Excluded:** Individual libraries (too granular), pure hardware (physical devices), workplace applications (end-user productivity tools)
+
 **Data Classification:**
 - Company-specific technology data (adoption metrics, decisions, rationale, exceptions) is confidential
 - Generic technology information (names, versions, public descriptions) is public
@@ -450,32 +501,60 @@ The Tech Registry Portal transforms technology governance from a top-down mandat
 - Authentication required to access confidential data
 - Authorization required for administrative functions (proposal review, bulk operations, exception approval)
 - Audit logging required for all governance actions
+- Director-level authorization required for exception approvals and fast-track decisions
 
 ### Organizational Constraints
 
 **Stakeholders:**
-- Technology Director
-- Engineering Director
+- Technology Director (exception approval, fast-track decisions)
+- Engineering Director (exception approval, fast-track decisions)
 - IT Leaders across local entities
+- Technology Governance Team (administrative oversight)
 
 **Governance:**
-- Technology proposals require administrative approval
-- Exception approval requires designated authority
+- **Central Standards:** Strict and cannot be overridden by local entities
+- **Entity Autonomy:** Local entities requiring different approaches must use exception management
+- Technology proposals require administrative approval (standard 2-week cycle)
+- Fast-track approvals available through Technology Director or Engineering Director
+- Exception approval requires Technology Director OR Engineering Director authority
 - Changes to technology records are audited
+- Community-driven maintenance with administrator and director oversight
 
 **Integration:**
 - No live integrations with existing systems
 - Deep links to external systems (e.g., LeanIX) for reference
 - Integration points are informational, not transactional
 
+**Change Management & Transitions:**
+- Technology classification changes include mandatory grace periods based on impact assessment
+- **Impact Levels:**
+  - **Low Impact:** 30 days (niche tools, limited usage, easy alternatives)
+  - **Medium Impact:** 90 days (widely used, moderate migration complexity)
+  - **High Impact:** 180+ days (core technologies, complex migrations, business-critical systems)
+- **Impact Assessment Criteria:**
+  - Number of applications/teams using the technology
+  - Complexity of migration to alternatives
+  - Business criticality of affected systems
+  - Availability and maturity of replacement technologies
+- Communication occurs across multiple channels during transitions (portal + digest + reports)
+- Administrators track migration progress during transition periods
+
 ---
 
 ## Future Enhancements (Good-to-Have)
 
-### Notifications & Subscriptions
-- Subscribe to technology changes or lifecycle transitions
-- Email notifications for proposal status updates
-- Alerts when subscribed technologies change status
+### Notifications & Subscriptions (High Priority)
+**Multi-Channel Notification System:**
+- **Email Digest:** Subscription-based notifications for users following specific technologies
+  - Subscribe to technology changes or lifecycle transitions
+  - Alerts when subscribed technologies change classification
+  - Proposal status updates for submitters
+- **Quarterly Governance Report:** Summary of technology changes distributed to IT leadership
+- **Portal Dashboard:** Real-time updates and notification center (always available as single source of truth)
+- **Communication for Transitions:** Automated notifications during technology classification transitions
+  - Initial announcement when change is approved
+  - Periodic reminders during transition period
+  - Final notice before enforcement
 
 ### AI Chat Interface
 - Conversational interface for technology discovery
@@ -499,37 +578,147 @@ The Tech Registry Portal transforms technology governance from a top-down mandat
 
 ---
 
-## Open Questions & Future Considerations
+## Open Questions & Future Considerations - RESOLVED
 
-*(Captured from critical thinking analysis - to be addressed in future iterations)*
+*(Captured from critical thinking analysis - addressed 2026-01-26)*
 
-1. **Governance Model:**
-   - How are subject matter experts involved in domain-specific reviews?
-   - What's the escalation path for urgent technology approvals?
-   - How do local entities balance autonomy with central standards?
+### 1. Governance Model
 
-2. **Technology Scope:**
-   - Precise definition of what counts as a "technology" (languages, frameworks, cloud services, methodologies, hardware?)
+**Subject Matter Expert Involvement:**
+- **Decision:** Administrators review all proposals initially
+- **Process:** When specialized domain expertise is required, administrators can assign the review to subject matter experts for that technology domain/area
+- **Rationale:** Provides flexibility to involve experts when needed while maintaining centralized coordination
 
-3. **Lifecycle Management:**
-   - What triggers revalidation beyond time-based expiration?
-   - Who is responsible for keeping records current?
-   - What happens to technologies that expire without revalidation?
+**Urgent Technology Approvals:**
+- **Decision:** Technology Director or Engineering Director can fast-track proposals with documented justification
+- **Process:** Director provides approval with business rationale, followed by post-review documentation
+- **Rationale:** Enables responsiveness to genuine business urgency while maintaining governance accountability
 
-4. **Proposal Process:**
-   - What information is required in proposals (business case, cost analysis, alternatives considered)?
-   - Are there formal review stages (screening → technical review → leadership approval)?
-   - What's the expected review cycle time?
+**Local Entity Autonomy:**
+- **Decision:** Central standards are strict and cannot be overridden by local entities
+- **Mechanism:** Local entities requiring different approaches must use the exception management process
+- **Process:** Local-specific exceptions are documented with restrictions and conditional usage terms
+- **Rationale:** Maintains organizational consistency while providing necessary flexibility through structured exception handling
 
-5. **Exception Management:**
-   - Who has authority to approve exceptions?
-   - Are exceptions visible to all users or limited to requesters?
-   - Should there be limits on exception usage?
+---
 
-6. **Change Communication:**
-   - How are stakeholders notified of technology changes?
-   - What's the transition period when technologies change classification?
-   - How do affected teams learn about changes requiring action?
+### 2. Technology Scope
+
+**Definition:**
+> Technology is the building block used to construct applications, systems, services and IT assets that support business capabilities. Along with the underlying infrastructure that enables their delivery and consumption, including tools, frameworks, techniques and processes employed to develop, deploy and manage those technology solutions.
+
+**Included:**
+- Programming languages and frameworks
+- Cloud platforms and services
+- Infrastructure components and tools
+- Development and deployment tools
+- Architectural patterns and practices
+- Databases and data platforms
+- Integration and messaging technologies
+
+**Excluded:**
+- Individual libraries (too granular)
+- Pure hardware (physical devices)
+- Workplace applications (end-user productivity tools)
+
+---
+
+### 3. Lifecycle Management
+
+**Revalidation Triggers:**
+Technologies require revalidation when ANY of the following occur:
+- **Time-based:** Scheduled expiration dates (annual, biannual, or custom intervals)
+- **Vendor/Market Changes:** End-of-life announcements, major version changes, licensing changes, vendor acquisition
+- **Strategy Changes:** Shifts in organizational technology strategy or architectural direction
+- **Usage Metrics:** Significant changes in adoption patterns, incident trends, or performance issues
+
+**Record Ownership:**
+- **Primary Responsibility:** Community-driven model where any user can propose updates
+- **Oversight:** Administrators and directors provide governance oversight and follow-up
+- **Process:** Updates flow through the proposal and approval workflow
+- **Accountability:** Technology records include designated owners for coordination, but maintenance is collaborative
+
+**Expired Technologies:**
+- **Decision:** Technologies that expire without revalidation are flagged for review but retain their current status
+- **Visibility:** Expired technologies are clearly marked in the portal with warning indicators
+- **Process:** Administrators receive alerts about expired technologies requiring action
+- **Rationale:** Prevents automatic changes that could disrupt operations while ensuring visibility and accountability
+
+---
+
+### 4. Proposal Process
+
+**Required Information:**
+All technology proposals must include:
+1. **Technology Name:** Official name and version
+2. **Description:** Clear explanation of what the technology is and does
+3. **Web Page:** Official documentation or vendor website
+4. **Use Case:** Specific business or technical use cases being addressed
+5. **Business Rationale:** Why this technology is needed and what value it provides
+6. **Alternatives Considered:** Other technologies evaluated and why they were not chosen
+7. **Migration Plan:** For changes to existing technologies, the plan for transition
+
+**Review Process:**
+- **Initial Review:** Administrator screens proposal for completeness
+- **Domain Review:** When needed, administrator assigns to subject matter expert
+- **Approval Decision:** Administrator or director approves/rejects with documented rationale
+- **Fast-Track Option:** Directors can expedite urgent proposals with justification
+
+**Review Cycle:**
+- **Standard Process:** Target review within 2 weeks of complete submission
+- **Fast-Track:** Director approval can occur within days with post-review documentation
+- **Iterative:** Proposals can be returned for clarification and resubmitted
+
+---
+
+### 5. Exception Management
+
+**Approval Authority:**
+- **Decision:** Technology Director OR Engineering Director can approve exceptions
+- **Requirement:** All exceptions require documented business justification
+- **Process:** Exception request → director review → approval with rationale → tracking in portal
+
+**Visibility:**
+- **Decision:** Exceptions are visible to all authenticated users
+- **Rationale:** Transparency promotes awareness and helps teams understand the technology landscape
+- **Display:** Exception status, scope, expiration date, and justification are shown on technology detail pages
+
+**Exception Limits:**
+- Time-bounded: All exceptions have defined expiration dates
+- Scope-defined: Exceptions specify which entities, projects, or teams they apply to
+- Tracked: Exception usage is monitored for governance reporting
+- Renewable: Exceptions can be renewed with updated justification before expiration
+
+---
+
+### 6. Change Communication
+
+**Notification Channels:**
+- **Portal:** Single source of truth showing current status (all users)
+- **Email Digest:** Subscription-based notifications for users following specific technologies (future enhancement)
+- **Quarterly Report:** Summary of governance changes distributed to IT leadership
+- **Rationale:** Multi-channel approach ensures both strategic awareness and individual relevance
+
+**Transition Periods:**
+Technology classification changes include grace periods based on impact:
+- **Low Impact:** 30 days (e.g., niche tools, limited usage)
+- **Medium Impact:** 90 days (e.g., widely used but easy to replace)
+- **High Impact:** 180+ days (e.g., core technologies, complex migrations)
+
+**Impact Assessment Criteria:**
+- Number of applications/teams using the technology
+- Complexity of migration to alternatives
+- Business criticality of affected systems
+- Availability of replacement technologies
+
+**Communication Process:**
+1. Classification change proposed and approved
+2. Impact assessment determines transition period
+3. Change announced across all channels
+4. Transition period begins with clear deadline
+5. Affected teams receive follow-up communications
+6. Administrators track migration progress
+7. Classification change takes full effect after transition period
 
 ---
 
@@ -559,6 +748,7 @@ The Tech Registry Portal transforms technology governance from a top-down mandat
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
 | 1.0 | 2026-01-26 | Tech Governance Team | Initial PRD based on requirements gathering |
+| 1.1 | 2026-01-26 | Tech Governance Team | Addressed open questions from critical thinking analysis; updated governance model, technology scope, lifecycle management, proposal process, exception management, and change communication sections with detailed decisions and requirements |
 
 ---
 
