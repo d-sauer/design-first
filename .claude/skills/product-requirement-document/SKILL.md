@@ -27,6 +27,8 @@ Documenting existing product requirements.
 ## Workflow
 
 - AI use following workflow to ask question by question from each step.
+- Analyse `research` folder for this work item, and focus on `product-requirements-draft.md`. 
+- Use `product-requirements-draft.md` to suggest answers during this stage.
 
 
 ### Step 1: Define the problem
@@ -78,7 +80,7 @@ Think about what the product does, not code structure, but [[#Step 1: Define the
    - What are the main capabilities of the product with their description.
    - what are the main user flows
    - Put this document markdown in `work/<project-name>/product/product-requirement.md`.
-- Generate document with quesstions being asked, and raw user answers and additional user inputs 
+- Generate document with quesstions being asked by AI (prompts), and raw user answers in the prompt. Put other user inputs on the end of the document.
    - Put this document markdown in `work/<project-name>/product/product-requirement-raw.md`.
 
 
