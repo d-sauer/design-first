@@ -20,10 +20,10 @@ Documenting existing product requirements or architecture.
 
 ## Output
 
-- Create folder structure
+- Create work item folder
    - Based on the given answer propose user 3 to 5 short and descriptive name in kebab-case format.
    - Based on user selection create folder with that name in `/work` folder.
-   - Create folder and file structure according to `./template`
+   - Create folder and file structure according to `./template/*`
 - Prefill templates
    - In the new work item folder, in `research` folder, there are draft template
    - Update `product-requirement-draft.md` by creating simple set of questions based on
