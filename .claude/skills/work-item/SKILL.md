@@ -20,8 +20,17 @@ Documenting existing product requirements or architecture.
 
 ## Output
 
-- Based on the given answer propose user 3 to 5 short and descriptive name in kebab-case format.
-- Based on user selection create folder with that name in `/work` folder.
-- Create folder and file structure according to `./template`
-
-- Inform user about next step. Create product definition, by saying `I want to define product definition`.
+- Create folder structure
+   - Based on the given answer propose user 3 to 5 short and descriptive name in kebab-case format.
+   - Based on user selection create folder with that name in `/work` folder.
+   - Create folder and file structure according to `./template`
+- Prefill templates
+   - In the new work item folder, in `research` folder, there are draft template
+   - Update `product-requirement-draft.md` by creating simple set of questions based on
+      - `./../product-requirement-document/SKILL.md`
+   - Update `architecture-draft.md` by creating simple set of questions based on
+      - `./../system-context/SKILL.md`
+      - `./../system-container/SKILL.md`
+      - `./../system-landscape/SKILL.md`
+- Next step
+   - Inform user about next step. Create product definition, by saying `I want to define product definition`.

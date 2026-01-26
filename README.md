@@ -146,15 +146,6 @@ At any stage, validate your approach:
 /critical-thinking       # Question assumptions, explore alternatives
 ```
 
-## Integration with Miro
-
-The repository integrates with Miro for visual collaboration:
-- Generate diagrams from text descriptions
-- Create flowcharts, mind maps, UML diagrams
-- Collaborative architecture documentation
-
-Configuration: `.mcp.json`
-
 ## Standards
 
 The `standards/` folder contains organization-wide conventions:

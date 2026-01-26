@@ -26,6 +26,9 @@ Documenting existing product requirements.
 
 ## Workflow
 
+- AI use following workflow to ask question by question from each step.
+
+
 ### Step 1: Define the problem
 
 1. What are you building?
@@ -69,12 +72,13 @@ Think about what the product does, not code structure, but [[#Step 1: Define the
 
 ## Output
 
-Generate markdown document combining all given inputs in appropriate structure.
+- Generate markdown document combining all given inputs in appropriate structure.
+   - Brief product description
+   - Reasoning why we need this product and why we can't use existing products.
+   - What are the main capabilities of the product with their description.
+   - what are the main user flows
+   - Put this document markdown in `work/<project-name>/product/product-requirement.md`.
+- Generate document with quesstions being asked, and raw user answers and additional user inputs 
+   - Put this document markdown in `work/<project-name>/product/product-requirement-raw.md`.
 
-- Brief product description
-- Reasoning why we need this product and why we can't use existing products.
-- What are the main capabilities of the product with their description.
-- what are the main user flows
-
-Put this document markdown in `work/<project-name>/product/` folder.
 
