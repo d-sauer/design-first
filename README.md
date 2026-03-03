@@ -4,15 +4,11 @@
 
 ---
 
-🚧 **Development in progress** — switch to [`dev`](../../tree/dev) branch for latest updates.
-
----
-
 ## What is DesignFirst?
 
 A methodology for using AI to elevate architectural thinking and deliver reliable, long-lived software.
-
 Because code was never the hard part — understanding the problem is.
+
 
 ## Core Philosophy
 
@@ -38,17 +34,17 @@ In today's world of instant code generation, the pressure shifts upstream. Desig
 
 ### Workflow
 
-1. **Create Work Item**
+0. **Create Work Item**
 ```
    /work-item
 ```
    Creates the folder structure for your work item.
 
-2. **Research**
-   - Fill in predefined templates in the `research/` folder
-   - Add any additional research documents
+1. **Research**
+   - Fill in predefined templates in the `research/` folder at your own cadence.
+   - Add any additional research materials to the folder.
 
-3. **Design**
+2. **Design**
    - **Product Requirements**
 ```
      /product-requirement-document
@@ -74,18 +70,28 @@ Analyzes research and product requirements, then guides you through architecture
 
 Each command guides you through a structured workflow, from problem definition to architecture to decision capture.
 
+3. **Plan**
+
+_Work in progress_
+
+
+4. **Execute**
+
+_Work in progress_
+
+
+
 ---
 
 ## Purpose
 
-This repository provides a systematic approach to software development by:
+This repository provides a systematic approach to software architecture by:
 
 - Creating organized work items with consistent structure
-- Guiding teams through research, product definition, architecture, and engineering phases
+- Guiding teams through research, product definition, architecture, and engineering phases.
 - Capturing architectural decisions and technology choices
-- Generating C4 model architecture diagrams
-- Maintaining organization-wide standards and best practices
-- Integrating visual collaboration through Miro boards
+- Create C4 model architecture diagrams based on your guidance
+
 
 ## Folder Structure
 
@@ -96,24 +102,18 @@ This repository provides a systematic approach to software development by:
 │       ├── research/        # Research findings and analysis
 │       ├── product/         # Product requirements and specifications
 │       └── architecture/    # Architecture documentation and diagrams
-├── standards/               # Organization-wide standards
-│   ├── adr/                # Architecture Decision Records
-│   ├── rfc/                # Request for Comments
-│   └── technology-repository/ # Approved/Disaproved technologies
 └── .claude/
-    └── skills/             # AI-powered guided workflows
+    └── skills/             # AI-powered guided workflows and skills
 ```
 
 ---
 
 ## ToDo
 
-- [ ] Apply DDD as SKILL
-- [ ] Domain modeling and bounded contexts, before component diagram
+
 - [ ] Create NFR skills to outline better non functional requirements, at he beginning of architecture design
-- [ ] Put Mermaide diagrams in separate standalone files
-- [ ] Add setup to run locall C4 Structurizr
-- [ ] Generate plan of execution / tasks
+- [ ] Put Mermaide C4 diagrams in separate standalone files
+- [ ] Implement plan phase to generate plan of execution and tasks
 
 ---
 
