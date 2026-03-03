@@ -133,7 +133,7 @@ Apply critical thinking using challenges from question-bank.md "Critical Thinkin
 
 ### Step 8: Generate Domain Analysis Document
 
-Use [assets/domain-analysis-template.md](assets/domain-analysis-template.md) to create a comprehensive document.
+Use [assets/domain-analysis-template.md](assets/domain-analysis-template.md) to create a comprehensive document in `architecture` folder
 
 **Document structure:**
 1. Domain Overview - Business problem, scope, stakeholders

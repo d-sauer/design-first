@@ -22,6 +22,8 @@ It's used during designing new architecture or mapping or updating existing arch
 - Confirm on which work item in `/work` folder this work is for.
 - In the current work item in `/work/{work item}` folder , analyse `research` folder for this work item, and `product/product-requirement.md` document for initial details.
 
+- Start with [domain driven design](../domain-driven-design/SKILL.md)
+
 - System Landscape `./../system-landscape/SKILL.md`  
   To understand sorounding of your application and main components 
 
@@ -35,9 +37,15 @@ It's used during designing new architecture or mapping or updating existing arch
   To understand in detail each container of the given system.
 
 - System Deployment `./../system-deployment/SKILL.md`
-  To plan deployment of your system.
+  To plan deployment of your system.  
+
+- Analyse `architecture` folder and create `README.md` containing summary of architecture documents with reference links to the files in `architecture` folder with brief description of each reference file and it's brief purpose.  
+
+- create project structure in `src` based on [clean-ddd-hexagoanl](../clean-ddd-hexagonal/SKILL.md)
 
 
 ## Solution Architecture
 
+- System Landscape `./../system-landscape/SKILL.md`  
+  To understand sorounding of your application and main components 
 

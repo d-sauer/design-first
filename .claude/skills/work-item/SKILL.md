@@ -33,4 +33,4 @@ Documenting existing product requirements or architecture.
       - `./../system-container/SKILL.md`
       - `./../system-landscape/SKILL.md`
 - Next step
-   - Inform user about next step. Create product definition, by saying `I want to define product definition`.
+   - When templates are filled in at your own peace, proceed with **product definition**, by saying `I want to define product definition`.
