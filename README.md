@@ -30,9 +30,11 @@ In today's world of instant code generation, the pressure shifts upstream. Desig
 - [Claude CLI](https://docs.anthropic.com/en/docs/claude-cli) installed
 - Clone this repository
 
-### Commands
 
 ### Workflow
+
+![workflow](workflow.drawio.png)
+
 
 0. **Create Work Item**
 ```
@@ -41,16 +43,18 @@ In today's world of instant code generation, the pressure shifts upstream. Desig
    Creates the folder structure for your work item.
 
 1. **Research**
-   - Fill in predefined templates in the `research/` folder at your own cadence.
+   - Research and complete the provided templates at your own pace in the `research/` folder
    - Add any additional research materials to the folder.
 
 2. **Design**
+
    - **Product Requirements**
+
 ```
      /product-requirement-document
 ```
 
-Analyzes your research and guides you through detailed questions. Outputs a Product Requirement Document.
+Analyzes your research, guides and **challenges** you through detailed questions. Outputs a Product Requirement Document.
 
 
 
@@ -59,7 +63,7 @@ Analyzes your research and guides you through detailed questions. Outputs a Prod
      /architecture-design
 ```
      
-Analyzes research and product requirements, then guides you through architecture decisions. On completion, offers next design stages:
+Analyzes research and product requirements, then guides and challenges  you through architecture decisions. On completion, offers next design stages:
 
   - `/system-landscape`
   - `/system-context`
